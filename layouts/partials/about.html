@@ -13,6 +13,11 @@
                         {{ with .Site.Params.about.description }}
                             <p>{{ . | markdownify }}</p>
                         {{ end }}
+                        <ul class="about-list">
+                            {{ range .Site.Params.about.partner }}
+                                <li>{{ .name }}</li>
+                            {{ end }}
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">

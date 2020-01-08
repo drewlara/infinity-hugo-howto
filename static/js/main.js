@@ -22,27 +22,12 @@ $(document).ready(function(){
         //console.log('a');
         $(".navigation").removeClass("animated");
     }});
-    
-    $year = $('#countdown_dashboard').data('year');
-    $month = $('#countdown_dashboard').data('month');
-    $day = $('#countdown_dashboard').data('day');
-    $('#countdown_dashboard').countDown({
-        targetDate: {
-            'day':      $day,
-            'month':    $month,
-            'year':     $year,
-            'hour':     23,
-            'min':      59,
-            'sec':      59,
-        },
-        omitWeeks: true
-    });
 
     $(".about-slider").owlCarousel(
         {
         singleItem: true,
         pagination : true,
-        autoPlay : 5000,
+        autoPlay : 2000,
         }
     );
 

@@ -1,6 +1,6 @@
 {{ if .Site.Params.cta.enable }}
     {{"<!-- Call To Action Section -->" | safeHTML}}
-    <section class="call-to-action" style='background-image: url("{{ with .Site.Params.cta.bg }}{{.}}{{ end }}")' >
+    <section class="call-to-action">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 wow text-center">
@@ -12,11 +12,10 @@
                             <p>{{ . }}</p>
                         {{ end }}
                         <div class="col-lg-6 offset-lg-3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address Here">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default btn-subscription" type="button">Subscribe</button>
-                                </span>
+                            <div class="event-group">
+                                <!-- EVENTS GO HERE -->
+                                    
+                                <!-- EVENTS GO HERE -->
                             </div>
                         </div>
                     </div>
