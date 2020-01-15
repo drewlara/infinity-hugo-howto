@@ -12,7 +12,7 @@ function formatDate(date) {
 
 function renderEventThumb(events) {
     if (!events.length) {
-        return [`<div class="no-events">No Upcomming Events</div>`]
+        return [`<div class="no-events">No upcomming events</div>`]
     }
     return events.map(event => (
         `<div class="event-thumbnail wow fadeInLeft">
@@ -38,6 +38,8 @@ function renderEventGrid(events) {
     });
     return eventGridArr.map(arr => arr.join(''));
 };
+
+const failedState = [`<div class="no-events">Unable to fetch events</div>`]
 
 $(document).ready(function(){
 
@@ -94,6 +96,10 @@ $(document).ready(function(){
         const displayedEvents = renderEventGrid(data.events);
         $('.lds-ring').hide();
         $('#events-section').html(displayedEvents);
+    })
+    .fail(function() {
+        $('.lds-ring').hide();
+        $('#events-section').html(failedState);
     });
 });
 
