@@ -11,6 +11,9 @@ function formatDate(date) {
 }
 
 function renderEventThumb(events) {
+    if (!events.length) {
+        return [`<div class="no-events">No Upcomming Events</div>`]
+    }
     return events.map(event => (
         `<div class="event-thumbnail wow fadeInLeft">
             <img src="${event.logo.url}" alt="event-img-${event.name.text}"/>
