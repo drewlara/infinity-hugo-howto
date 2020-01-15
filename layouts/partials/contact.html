@@ -9,15 +9,16 @@
                             {{ with .Site.Params.contact.title }}
                             <h2>{{ . }}</h2>
                             {{ end }}
-                            {{ with .Site.Params.contact.subtitle }}
-                                <p>{{ . }}</p>
-                            {{ end }}
+                            <div class="social">
+                                <a href="{{.Site.Params.contact.facebookLink}}" target="_blank" style="margin-right: 10px"><img src="{{.Site.Params.contact.facebookIcon}}" alt="link-fb" /></a>
+                                <a href="{{.Site.Params.contact.eventbriteLink}}" target="_blank" style="margin-left: 10px"><img src="{{.Site.Params.contact.eventbriteIcon}}" alt="link-eb" /></a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 offset-md-3">
                     <div class="form-group">
-                        <form action="#" method="POST">
+                        <form>
                             <div class="input-field">
                                 <input type="text" class="form-control" placeholder="Your Name" name="name">
                             </div>
@@ -27,15 +28,8 @@
                             <div class="input-field">
                                 <textarea class="form-control" placeholder="Your Message" rows="3" name="message"></textarea>
                             </div>
-                            <button class="btn btn-send" type="submit">Send me</button>
+                            <button class="btn btn-send" type="submit">Submit</button>
                         </form>
-
-                        <div id="success">
-                            <p>Your Message was sent successfully</p>
-                        </div>
-                        <div id="error">
-                            <p>Your Message was not sent successfully</p>
-                        </div>
                     </div>
                 </div>
             </div>
