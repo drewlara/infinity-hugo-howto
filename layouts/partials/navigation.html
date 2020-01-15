@@ -5,16 +5,11 @@
             <img src="{{ . }}" alt="logo">
             {{ end }}
         </a>
-        <button class="navbar-toggler hidden-lg-up float-lg-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <i class="tf-ion-android-menu"></i>
+        <button class="navbar-toggler hidden-lg-up float-lg-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" id="navbarButton">
+            <i class="tf-ion-android-menu" id="navbarHamburger"></i>
         </button>
         <div class="collapse navbar-toggleable-md" id="navbarResponsive">
             <ul class="nav navbar-nav menu float-lg-right" id="top-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ .Site.BaseURL }}#home">
-                        {{ with .Site.Params.navigation.home }} {{ . }} {{ end }}
-                    </a>
-                </li>
                 {{ if .Site.Params.about.enable }}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ .Site.BaseURL }}#about">
@@ -29,6 +24,11 @@
                         </a>
                     </li>
                 {{ end }}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ .Site.BaseURL }}#events">
+                        Events
+                    </a>
+                </li>
                 {{ if .Site.Params.contact.enable }}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ .Site.BaseURL }}#contact">

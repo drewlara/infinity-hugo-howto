@@ -69,6 +69,19 @@ $(document).ready(function(){
         }
     );
 
+    $("#navbarHamburger").click(function() {
+        var scroll = $(window).scrollTop();
+        console.log(scroll)
+        if(scroll < 200) {
+            if (!$("#navbarButton").hasClass("collapsed") && $("#navbarResponsive").attr("aria-expanded") != undefined) {
+                $(".navigation").removeClass("animated");
+            }
+            else if ($("#navbarButton").hasClass("collapsed") || $("#navbarResponsive").attr("aria-expanded") == undefined) {
+                $(".navigation").addClass("animated");
+            }
+        };
+    })
+
     $.ajax({
         type: "GET",
         url: "https://www.eventbriteapi.com/v3/users/me/events/?token=MKMRNJ6E6I3JTYPCN6II&time_filter=current_future",
@@ -77,7 +90,7 @@ $(document).ready(function(){
     .done(function(data) {
         const displayedEvents = renderEventGrid(data.events);
         $('.lds-ring').hide();
-        $('#events').html(displayedEvents);
+        $('#events-section').html(displayedEvents);
     });
 });
 
